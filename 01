@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+class bankaccount{
+ private:
+    string name;
+    int accountnumber;
+    string type;
+    double balance;
+public:
+  bankaccount(string name,int accountnumber,string type,double balance){
+   this->name=name;
+   this->accountnumber=accountnumber;
+   this->type=type;
+   this->balance=balance;
+  }
+  void currentmoney(double m){
+      balance=balance+m;
+     cout<<m;
+  }
+  void withdraw(double m){
+      if(balance>=m){
+      balance=balance-m;
+      }
+      else{
+          cout<<"sorry";
+      }
+  }
+  void customer(){
+      cout<<balance<<endl;
+      cout<<name;
+      
+  }
+  string getname(){
+      return name;
+  }
+  int getaccountnumber(){
+      return accountnumber;
+  }
+  string gettype(){
+      return type;
+  }
+  double getbalance(){
+      return balance;
+  }
+};
+ int main(){
+     bankaccount customer1("samatha",18235,"memory",235);
+     double m;
+     cin>>m;
+     customer1.withdraw(m);
+     
+     
+     cout<<"your info";
+     customer1.customer();
+     return 0;
+     
+ }
